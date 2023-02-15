@@ -1,0 +1,114 @@
+@import '../../style/variables.scss';
+
+.app {
+    &__header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 37px;
+        span {
+            color: $main-color;
+        }
+    }
+    &__menu {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 32px;
+            li {
+                margin: 0 8px;
+                a:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+.zalupa {
+    opacity: 0;
+    visibility: hidden;
+}
+.zalupa-enter {
+    opacity: 1;
+    transform: rotate(0deg) scale(.3);
+    transition: all;
+}
+.zalupa-enter-active {
+    opacity: 1;
+    transform: rotate(2520deg) scale(1);
+    visibility: visible;
+    transition: all 3000ms;
+}
+.zalupa-enter-done {
+    opacity: 1;
+    visibility: visible;
+}
+.zalupa-exit {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.zalupa-exit-active {
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(-2520deg) scale(.3);;
+    transition: all 3000ms;
+}
+
+.closeModal {
+    position: absolute;
+    top: -45px;
+    right: -25px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.2;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.openButton {
+    width: 30px;
+    height: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    background: #DEC0DE;
+    border-radius: 4px;
+    box-shadow: 3px 3px 10px rgba(0,0,0, .3);
+    cursor: pointer;
+    &:hover {
+        width: 55px;
+        height: 35px;
+        font-size: 16px;
+        box-shadow: 3px 3px 3px rgba(0,0,0, .3);
+    }
+}
+
+.closeModal::before,
+.closeModal::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #000;
+}
+
+.closeModal::before {
+    transform: rotate(45deg);
+}
+
+.closeModal::after {
+    transform: rotate(-45deg);
+}
+
